@@ -40,16 +40,15 @@ int main(){
 	int step = 0;
 	const int startx = posx;
 	const int starty = posy;
-	map<int,vector<int>> inithmap(hmap);
-	map<int,vector<int>> initvmap(vmap);
+	map<int,vector<int>> newhmap(hmap);
+	map<int,vector<int>> newvmap(vmap);
 	for(int a{0};a<130;a++){
 		for(int b{0};b<130;b++){
-			cout << a*130 + b << endl;
+			//cout << a*130 + b << endl;
 			step = 0;
 			dir = 'u';
-			map<int,vector<int>> newhmap(inithmap);
-			map<int,vector<int>> newvmap(initvmap);
-			newvmap = initvmap;
+			newvmap = vmap;
+			newhmap = hmap;
 			if(newhmap.count(b)){
 				newhmap[b].push_back(a);
 			}else{
@@ -67,7 +66,7 @@ int main(){
 			
 	
 	
-	while(posx!=-1 && step<1000){
+	while(posx!=-1 && step<525){
 	//	cout << "test2" << endl;
 	//	cout << visited.size() << endl;
 	//	cout << posx << " " << posy << endl;
@@ -79,15 +78,9 @@ int main(){
 				}
 			}
 			if(closest>1000){
-				for(int i{posy};i<130;i++){
-					visited.insert(make_pair(posx,i));
-				}
 				posx=-1;
 				posy=-1;
 			} else{
-				for(int i{posy};i<closest;i++){
-					visited.insert(make_pair(posx,i));
-				}
 				posy = closest-1;
 			}
 			
@@ -100,15 +93,9 @@ int main(){
 				}
 			}
 			if(closest>1000){
-				for(int i{posx};i<130;i++){
-					visited.insert(make_pair(i,posy));
-				}
 				posx=-1;
 				posy=-1;
 			} else{
-				for(int i{posx};i<closest;i++){
-					visited.insert(make_pair(i,posy));
-				}
 				posx = closest-1;
 			}
 			dir='d';
@@ -120,15 +107,9 @@ int main(){
 				}
 			}
 			if(closest<-1000){
-				for(int i{0};i<=posy;i++){
-					visited.insert(make_pair(posx,i));
-				}
 				posx=-1;
 				posy=-1;
 			} else{
-				for(int i{closest+1};i<=posy;i++){
-					visited.insert(make_pair(posx,i));
-				}
 				posy = closest+1;
 			}
 			dir='l';
@@ -140,21 +121,15 @@ int main(){
 				}
 			}
 			if(closest<-1000){
-				for(int i{0};i<=posx;i++){
-					visited.insert(make_pair(i,posy));
-				}
 				posx=-1;
 				posy=-1;
 			} else{
-				for(int i{closest+1};i<=posx;i++){
-					visited.insert(make_pair(i,posy));
-				}
 				posx = closest+1;
 			}
 			dir='u';
 		}
 				step++;
-	} if(step>=1000){
+	} if(step>=525){
 				obsum++;
 			}
 		}}
