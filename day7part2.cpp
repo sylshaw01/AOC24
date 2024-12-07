@@ -26,6 +26,7 @@ int main(){
 		//cout << "line: " << i << "\n";
 		//maybe I don't need all these structures if I only process input line by line
 		// but it can't hurt for now
+		//
 		long long target;
 
 
