@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
-
+//day  p1time   p1rank   p2time   p2rank
+//7   02:18:59  12392    04:10:21  16012
 
 using namespace std;
 template <typename Out>

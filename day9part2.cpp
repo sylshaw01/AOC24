@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
-
+//day   p1time  p1rank      p2time   p2rank
+//9   01:32:58   9464      03:42:47   9421 
+//
+//
+//very happy to get my first every sub 10k rank :D
 using namespace std;
 
 int main(){

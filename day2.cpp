@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 
+//day  p1time   p1rank     p2time    p2rank
+//2   01:56:24  20235      02:35:05  16123  
 using namespace std;
 
 template <typename Out>

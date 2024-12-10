@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 #include <regex>
+//day  p1time   p1rank      p2time  p2rank
+//3   17:11:34  92514      17:53:53  82689
+
 using namespace std;
 
 int main(){

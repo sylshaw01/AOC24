@@ -1,4 +1,7 @@
 #include <bits/stdc++.h>
+
+//day  p1time   p1rank     p2time    p2rank
+//4   11:03:23  53427      11:14:49  46466
 using namespace std;
 
 int main(){

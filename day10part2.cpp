@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
+#include <chrono>
+using namespace std::chrono;
 
 using namespace std;
+//day   p1time   p1rank	    p2time   p2rank
+//10   04:05:42  17442     04:12:22  16651 
+//
+//
+//Slept in today, so really p1 was about 40 mins, and p2 then about 50 mins, which might actually be my quickest time!
 
 
 
@@ -35,6 +42,7 @@ void search(int indi, int indj, vector<vector<int>> topmap, map<pair<int,int>,in
 
 int main(){
 
+//	auto start=high_resolution_clock::now();
 	int mapHeight = 50;
 	int mapWidth = 50;
 	vector<vector<int>> topmap(mapHeight,vector<int>(mapWidth));
@@ -62,6 +70,8 @@ int main(){
 		}
 	}
 	cout << trailScore << "\n";
-
+//	auto stop = high_resolution_clock::now();
+//	auto duration = duration_cast<microseconds>(stop-start);
+//	cout << (double)duration.count()/1000000 << "\n";
 	
 }
