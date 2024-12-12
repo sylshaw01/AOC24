@@ -1,13 +1,15 @@
 #include <bits/stdc++.h>
+#include <chrono>
 #include <iterator>
 //day  p1time   p1rank    p2time  p2rank
 //6   01:44:13  13536   03:09:08  10164
 
 using namespace std;
+using namespace chrono;
 int main(){
-
-	map<int,vector<int>> hmap;
-	map<int,vector<int>> vmap;
+	auto start = high_resolution_clock::now();
+	unordered_map<int,vector<int>> hmap;
+	unordered_map<int,vector<int>> vmap;
 	int posx = 0, posy = 0;
 	string line;
 
@@ -33,9 +35,6 @@ int main(){
 		}
 		
 	}
-	cout << hmap.size() << " " << vmap.size() << "\n";
-	cout << posx << " " << posy << "\n";
-	cout << "test" << endl;
 	set<pair<int,int>> visited;
 	char dir = 'u';
 	int sum = 0;
@@ -43,11 +42,10 @@ int main(){
 	int step = 0;
 	const int startx = posx;
 	const int starty = posy;
-	map<int,vector<int>> newhmap(hmap);
-	map<int,vector<int>> newvmap(vmap);
-	for(int a{0};a<130;a++){
-		for(int b{0};b<130;b++){
-			//cout << a*130 + b << endl;
+	unordered_map<int,vector<int>> newhmap(hmap);
+	unordered_map<int,vector<int>> newvmap(vmap);
+	for(int a{0};a<inlen;a++){
+		for(int b{0};b<inlen;b++){
 			step = 0;
 			dir = 'u';
 			newvmap = vmap;
@@ -69,10 +67,7 @@ int main(){
 			
 	
 	
-	while(posx!=-1 && step<525){
-	//	cout << "test2" << endl;
-	//	cout << visited.size() << endl;
-	//	cout << posx << " " << posy << endl;
+	while(posx!=-1 && step<((2*inlen)+1)){
 		if(dir=='u'){
 			int closest = 1e7;
 			for(int i{0};i<newvmap[posx].size();i++){
@@ -132,12 +127,17 @@ int main(){
 			dir='u';
 		}
 				step++;
-	} if(step>=525){
+	} if(step>=((2*inlen)+1)){
 				obsum++;
 			}
 		}}
-	cout << visited.size() << "\n";
-	cout << "obsum " << obsum << "\n"; 
+	cout  << obsum << "\n"; 
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop-start);
+	//cout << (double)duration.count()/1000000 << "\n";
+	//
+	//
+	//runs in 2.92674s
 	return 0;
 
 }
