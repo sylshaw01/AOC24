@@ -26,7 +26,7 @@ vector<int> splitNumLine(string inputLine){
 	return matches;
 
 }
-
+//this is undoubtably a very slow dijkstras, I'm computing a lot more info than necessary and I'm not using priority queues.
 map<pair<int,int>,int> dijkstra(set<pair<int,int>>nodes, pair<int,int> beginning, pair<int,int> end){
 	set<pair<int,int>> qnode;
 	map<pair<int,int>,pair<int,int>> prev;
